@@ -1,14 +1,15 @@
 
-var express = require("express");
-var app = express();
-var PORT = 8080;
+const express = require("express");
+const app = express();
+const PORT = 8080;
+const { add, subtract, multiply, divide } = require('./lib/operations')
 
 app.get('/:operator/:num1/:num2', function(req,res){
-	
-	var operator = req.params.operator
-	var num1 = parseInt(req.params.num1);
-	var num2 = parseInt(req.params.num2);
-	var result;
+
+	const operator = req.params.operator
+	const num1 = parseInt(req.params.num1);
+	const num2 = parseInt(req.params.num2);
+	let result;
 
 	switch(operator){
 		case "addition":
